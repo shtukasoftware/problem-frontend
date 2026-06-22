@@ -1,0 +1,19 @@
+<h2>Register</h2>
+
+<div class="card">
+  <label for="username">Username</label>
+
+  <input type="text" id="username" [(ngModel)]="username"/>
+
+  <label for="password">Password</label>
+
+  <input type="text" id="password" [(ngModel)]="password"/>
+
+  <label for="passwordConfirmed">Confirm Password</label>
+
+  <input type="text" id="passwordConfirmed" [(ngModel)]="passwordConfirmation"/>
+
+  <button (click)="onSubmit()">Submit</button>
+
+  <p>{{output}}</p>
+</div>

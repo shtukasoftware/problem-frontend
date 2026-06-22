@@ -1,0 +1,25 @@
+<h2>Problems</h2>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Tags</th>
+    <th>Status</th>
+  </tr>
+  </thead>
+  <tbody>
+    @for (problem of problems(); track problem.id) {
+      <tr>
+        <td>{{ problem.id }}</td>
+        <td><a [routerLink]="['/problems', problem.id]">{{ problem.title }}</a></td>
+        <td>{{ problem.tags.join(', ') }}</td>
+        <td> @if (problemsSolved[problem.id] !== undefined) {
+          <span style="color: #2e7d32">Solved</span>
+        } @else {
+          <span style="color: #a63d2f">Unsolved</span>
+        }</td>
+      </tr>
+    }
+  </tbody>
+</table>

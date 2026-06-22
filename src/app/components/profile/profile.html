@@ -1,0 +1,12 @@
+<h2>Profile</h2>
+
+@if (isLoggedIn()) {
+  <p>Hello <strong>{{username}}</strong>,</p>
+  <p>You have solved {{n}} problems.</p>
+  <button type="button" (click)="logout()">Logout</button>
+  <button type="button" (click)="delete()" style="background: red">Delete</button>
+} @else {
+  <p>You are not logged in, <a routerLink="/login">login</a> or <a routerLink="/register">register</a> to create a new
+  account.</p>
+
+}

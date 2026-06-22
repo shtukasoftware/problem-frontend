@@ -1,0 +1,32 @@
+@if (!problemFound()) {
+  <h2>Problem not found</h2>
+} @else {
+  <h2>Problem {{problem().id}}</h2>
+  <div class="card">
+  <h3>{{problem().title}}</h3>
+  <p [innerHTML]="problem().statement | katex"></p>
+    @if (problem().tags.length > 0) {
+      <p>Tags: {{problem().tags.join(', ')}} </p>
+    }
+    <p>Status:
+      @if (solved()) {
+        <span style="color: #2e7d32">Solved</span>
+      } @else {
+        <span style="color: #a63d2f">Unsolved</span>
+      }
+    </p>
+  @if (isLoggedIn()) {
+    <input type="text" [(ngModel)]="answer" placeholder="Enter an integer"/>
+    <button type="button" (click)="onSubmit()">Submit</button>
+    <p>{{output()}}</p>
+  } @else {
+    <p><strong>Login to submit!</strong></p>
+  }
+  </div>
+  @if (problem().id > 0) {
+    <button type="button" (click)="onPrev()" style="display: inline-block; width: auto; padding: 8px 24px; font-size: 18px; margin: 16px 8px;">← Prev</button>
+  }
+  @if (problem().id < problemNumber() - 1) {
+    <button type="button" (click)="onNext()" style="display: inline-block; width: auto; padding: 8px 24px; font-size: 18px; margin: 16px 8px;">Next →</button>
+  }
+  }
