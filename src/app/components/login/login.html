@@ -1,9 +1,9 @@
 <h2>Login</h2>
 <div class="card">
   <label for="username">Username</label>
-  <input id="username" type="text", [(ngModel)]="username"/>
+  <input id="username" type="text" [(ngModel)]="username"/>
   <label for="password">Password</label>
-  <input id="password" type="text", [(ngModel)]="password"/>
+  <input id="password" type="password" [(ngModel)]="password"/>
   <button (click)="onSubmit()" type="button">Submit</button>
   <p>{{output}}</p>
 </div>
