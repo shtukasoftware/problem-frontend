@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Computer+Modern+Serif');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap');
 
 body {
   text-align: center;
@@ -7,7 +7,7 @@ body {
   padding: 20px;
   background: #faf6f1;
   color: #2d2a26;
-  font-family: 'Computer Modern Serif', 'Latin Modern Roman', Georgia, serif;
+  font-family: 'EB Garamond', Georgia, serif;
   line-break: loose;
 }
 
